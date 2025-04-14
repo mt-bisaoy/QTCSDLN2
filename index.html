@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>Đăng nhập</title>
+  <!-- ✅ Font Awesome luôn đặt TRƯỚC file style.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style_reset_added.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap&subset=vietnamese" rel="stylesheet">
+
+</head>
+<body>
+  <div class="hero-title">
+    PHẦN MỀM QUẢN LÝ NHÀ CUNG CẤP VẬT TƯ
+  </div>
+  
+  <div class="login-container">
+   
+    <form class="login-box" autocomplete="off" onsubmit="login(); return false;">
+  
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+      
+      <h2>Đăng nhập hệ thống      </h2>
+      
+      <div class="input-icon">
+        <div class="icon-layer">
+          <i class="fa-solid fa-user icon"></i>
+        </div>
+        <input type="text" id="username" placeholder="Tên đăng nhập" autocomplete="off" />
+      </div>
+      
+      <div class="input-icon">
+        <div class="icon-layer">
+          <i class="fa-solid fa-lock icon"></i>
+        </div>
+        <input type="password" id="password" placeholder="Mật khẩu" autocomplete="off" />
+      </div>
+      <div id="login-error" class="error-message" style="display: none; color: red; font-size: 14px; margin-top: 5px;">
+      </div>
+      
+      <div id="login-error" class="error-message" style="display: none; color: red; font-size: 14px; margin-top: 5px;">
+        Sai tên đăng nhập hoặc mật khẩu!
+      </div>
+      
+      <div class="login-options">
+        <div class="remember-box">
+          <input type="checkbox" id="remember">
+          <label for="remember">Lưu mật khẩu</label>
+        </div>
+        <a href="#" id="forgot-link">Quên mật khẩu?</a>
+      </div>
+      
+      <button onclick="login()">Đăng nhập</button>
+    </div>
+    <div class="reset-box" style="display: none;">
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+      <h2>Khôi phục mật khẩu</h2>
+      <p class="reset-desc">Vui lòng nhập email liên kết với tài khoản của bạn.<br>Chúng tôi sẽ gửi mã xác nhận đến email đó.</p>
+      <p id="reset-feedback" style="color: #00e1ff; text-align: center; display: none;">Mã đã được gửi đến email!</p>
+      <input type="email" placeholder="Nhập email khôi phục" id="reset-email" />
+      <div id="reset-error" style="display: none; color: red; font-size: 14px; margin-top: 5px;">
+        Vui lòng nhập email!
+      </div>
+      <div class="reset-actions-column">
+        <button class="send-btn" onclick="sendReset()">Gửi yêu cầu</button>
+        <button class="back-btn" onclick="backToLogin()">Quay lại</button>
+      </div>
+    </div>
+    <div class="verify-box" style="display: none;">
+      <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+      <h2>Xác nhận mã</h2>
+      <p class="verify-desc" id="verify-desc">
+        Một mã xác nhận đã được gửi đến địa chỉ email của bạn. Vui lòng nhập mã vào ô bên dưới.
+      </p>
+      <div class="code-inputs" id="code-inputs">
+        <input type="text" maxlength="1" class="code-box" inputmode="numeric" pattern="[0-9]*" />
+        <input type="text" maxlength="1" class="code-box" inputmode="numeric" pattern="[0-9]*" />
+        <input type="text" maxlength="1" class="code-box" inputmode="numeric" pattern="[0-9]*" />
+        <input type="text" maxlength="1" class="code-box" inputmode="numeric" pattern="[0-9]*" />
+        <input type="text" maxlength="1" class="code-box" inputmode="numeric" pattern="[0-9]*" />
+        <input type="text" maxlength="1" class="code-box" inputmode="numeric" pattern="[0-9]*" />
+      </div>
+      <div class="verify-actions-column">
+        <button class="verify-btn" onclick="verifyCode()">Xác nhận</button>
+        <button class="back-btn" onclick="backToReset()">Quay lại</button>
+      </div>
+    </div>
+  </form>
+  <div class="login-box newpass-box" style="display: none;">
+    <div class="corner tl"></div>
+    <div class="corner tr"></div>
+    <div class="corner bl"></div>
+    <div class="corner br"></div>
+  
+    <h2>Đặt mật khẩu mới</h2>
+    <p class="newpass-desc">
+      Vui lòng nhập mật khẩu mới của bạn.<br>Đảm bảo mật khẩu đủ mạnh và dễ nhớ.
+    </p>
+  
+    <div class="input-icon">
+      <div class="icon-layer">
+        <i class="fa-solid fa-lock icon"></i>
+      </div>
+      <input type="password" placeholder="Mật khẩu mới" id="new-password" />
+    </div>
+  
+    <div class="input-icon">
+      <div class="icon-layer">
+        <i class="fa-solid fa-lock icon"></i>
+      </div>
+      <input type="password" placeholder="Xác nhận mật khẩu" id="confirm-password" />
+    </div>
+  
+    <button onclick="submitNewPassword()">Xác nhận</button>
+  </div>
+  
+   <!-- 👈 thêm dòng này để đóng form -->
+  
+<script src="script.js"></script>
+</body>
+</html>

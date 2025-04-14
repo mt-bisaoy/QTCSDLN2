@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang chủ</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style_reset_added.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+  <div class="topbar">
+    <button id="sidebar-toggle"><i class="fas fa-bars"></i></button>
+    <div class="topbar-right">
+      <i class="fas fa-bell" title="Thông báo"></i>
+      <i class="fas fa-cog" title="Cài đặt"></i>
+    </div>
+  </div>
+  </div>
+  <div class="app-container">
+    <div class="sidebar" id="sidebar">
+      <div class="profile">
+        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar" class="avatar-big">
+        <div class="username" id="username-display">admin</div>
+      </div>
+      <ul>
+        <li><a href="#" class="active"><i class="fas fa-home"></i> <span>Trang chủ</span></a></li>
+        <li><a href="#"><i class="fas fa-box"></i> <span>Quản lý vật tư</span></a></li>
+        <li><a href="#"><i class="fas fa-industry"></i> <span>Quản lý nhà cung cấp</span></a></li>
+        <li><a href="#"><i class="fas fa-file-alt"></i> <span>Quản lý đơn hàng</span></a></li>
+        <li><a href="#"><i class="fas fa-warehouse"></i> <span>Quản lý kho hàng</span></a></li>
+        <li><a href="#"><i class="fas fa-chart-bar"></i> <span>Báo cáo & thống kê</span></a></li>
+      </ul>
+      
+      
+      <div class="logout-button">
+        <button onclick="logout()">
+          <i class="fas fa-sign-out-alt"></i> <span>Đăng xuất</span>
+        </button>
+      </div>
+      
+      </div>
+      <div class="main-content">
+        <h1 class="main-title">Hệ thống quản lý nhà cung cấp vật tư</h1>
+        <p class="welcome-msg">Chào mừng trở lại, <span id="username-display"></span></p>
+      
+        <div class="function-cards">
+          <div class="card">
+            <div class="emoji">📦</div>
+            <span>Quản lý vật tư</span>
+          </div>
+          <div class="card">
+            <div class="emoji">🏭</div>
+            <span>Quản lý nhà cung cấp</span>
+          </div>
+          <div class="card">
+            <div class="emoji">📝</div>
+            <span>Quản lý đơn hàng</span>
+          </div>
+          <div class="card">
+            <div class="emoji">🏬</div>
+            <span>Quản lý kho hàng</span>
+          </div>
+          <div class="card">
+            <div class="emoji">📊</div>
+            <span>Báo cáo & thống kê</span>
+          </div>
+        </div>
+        
+        
+        
+        
+        </div>
+        
+      </div>
+    </div>
+  
+  
+  <script src="script.js"></script>
+</body>
+</html>
